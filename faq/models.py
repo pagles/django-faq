@@ -54,7 +54,7 @@ class Question(FaqBase):
         ordering = ['sort_order', 'created_on', ]
 
     def __unicode__(self):
-        return self.text
+        return self.text[:100]
 
     def save(self, *args, **kwargs):
         self.updated_on = datetime.now()
